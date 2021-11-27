@@ -1,3 +1,4 @@
+# shellcheck shell=sh disable=SC3006,3010,3043,2034,2154,3054,3020,2004,2164,3030,2015,2086,1036
 emulate -RL zsh
 setopt extendedglob warncreateglobal typesetsilent noshortloops
 
@@ -18,7 +19,7 @@ setopt extendedglob warncreateglobal typesetsilent noshortloops
             [[ "${OPTS[opt_-q,--quiet]}" != 1 ]] && \
                 print -P -- "%F{38}test z-plugin: %F{154}RUNNING MAKEFILE TESTS%f"
             integer quiet=0
-            zstyle -T ":zinit:annex:test" quiet && quiet=1
+            zstyle -T ":zi:annex:test" quiet && quiet=1
             if (( quiet )); then
                 if make test &>/dev/null; then
                     [[ "${OPTS[opt_-q,--quiet]}" != 1 ]] && \
@@ -39,7 +40,7 @@ setopt extendedglob warncreateglobal typesetsilent noshortloops
             [[ "${OPTS[opt_-q,--quiet]}" != 1 ]] && \
                 print -P -- "%F{38}test z-plugin: %F{154}RUNNING ZUNIT TESTS%f"
             integer quiet=0
-            zstyle -T ":zinit:annex:test" quiet && quiet=1
+            zstyle -T ":zi:annex:test" quiet && quiet=1
             if (( quiet )); then
                 if zunit &>/dev/null; then
                     [[ "${OPTS[opt_-q,--quiet]}" != 1 ]] && \
@@ -54,9 +55,7 @@ setopt extendedglob warncreateglobal typesetsilent noshortloops
         else
             [[ "${OPTS[opt_-q,--quiet]}" != 1 ]] && \
                 print -P -- "%F{38}test z-plugin: %F{154}Please install molovo/zunit to" \
-                   " run the zunit tests provided with the plugin%f"
+                " run the zunit tests provided with the plugin%f"
         fi
     fi
 )
-
-# vim:ft=zsh:sw=4:sts=4:et
