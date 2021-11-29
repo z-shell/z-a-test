@@ -10,12 +10,12 @@ autoload -Uz →zp-test-handler …zp-test-make-targets
 →za-test-help-null-handler() { :; }
 
 # Register atclone hook
-@zinit-register-annex "z-a-test" hook:atclone-110 \
+@zi-register-annex "z-a-test" hook:atclone-110 \
     →zp-test-handler \
     →za-test-help-null-handler \
     "notest|test''" # register a new ice-mod: test''
 
 # Register atpull hook
-@zinit-register-annex "z-a-test" hook:atpull-110 \
+@zi-register-annex "z-a-test" hook:atpull-110 \
     →zp-test-handler \
     →za-test-help-null-handler
