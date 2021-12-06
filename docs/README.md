@@ -1,8 +1,6 @@
-- [Introduction](#introduction)
-- [Configuration](#configuration)
-	- [Examples](#examples)
+<h1> ZI Annex Test </h1>
 
-# Introduction
+## Introduction
 
 > **[?]**
 > This repository not compatible with previous versions (zplugin, zinit).
@@ -16,7 +14,7 @@ a plugin or snippet. Simply load it like any other plugin to make it active:
 zi light z-shell/z-a-test
 ```
 
-# Configuration
+## Configuration
 
 To run the tests in a verbose mode, issue:
 
@@ -32,7 +30,7 @@ zi ice notest
 zi load …
 ```
 
-## Examples
+### Examples
 
 Example activation in the default quiet mode:
 

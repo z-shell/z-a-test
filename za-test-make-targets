@@ -1,13 +1,10 @@
-# -*- mode: sh; sh-indentation: 4; indent-tabs-mode: nil; sh-basic-offset: 4; -*-
-# Almost all code borrowed from Zshell's _make function
-#
 # Copyright (c) 2018 Sebastian Gniazdowski
 
 emulate -LR zsh -o extendedglob
 
 local -a TARGETS match mbegin mend
 
-…zp-test-make-expandVars() {
+za-test-make-expandVars() {
     local open close var val front='' rest=$1
 
     while [[ $rest == (#b)[^$]#($)* ]]; do
@@ -73,7 +70,7 @@ local -a TARGETS match mbegin mend
 }
 
 
-…zp-test-make-parseMakefile () {
+za-test-make-parseMakefile () {
     local input var val target dep TAB=$'\t' tmp IFS=
 
     while read input
@@ -82,14 +79,14 @@ local -a TARGETS match mbegin mend
             # TARGET: dependencies
             # TARGET1 TARGET2 TARGET3: dependencies
             ([[*?[:alnum:]$][^$TAB:=%]#:[^=]*)
-            target=$(…zp-test-make-expandVars ${input%%:*})
+            target=$(za-test-make-expandVars ${input%%:*})
             TARGETS+=( ${(z)target} )
             ;;
         esac
     done
 }
 
-…zp-test-make-parseMakefile < "$1"
+za-test-make-parseMakefile < "$1"
 
 reply=( "${(u)TARGETS[@]}" )
 

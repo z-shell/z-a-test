@@ -1,4 +1,3 @@
-# shellcheck shell=sh disable=SC3006,3010,3043,2034,2154,3054,3020,2004,2164,3030,2015,2086,1036
 emulate -RL zsh
 setopt extendedglob warncreateglobal typesetsilent noshortloops
 
@@ -14,7 +13,7 @@ setopt extendedglob warncreateglobal typesetsilent noshortloops
     builtin cd -q $dir
 
     if [[ -f Makefile ]]; then
-        …zp-test-make-targets Makefile
+        za-test-make-targets Makefile
         if (( ${reply[(I)test]} )); then
             [[ "${OPTS[opt_-q,--quiet]}" != 1 ]] && \
                 print -P -- "%F{38}test z-plugin: %F{154}RUNNING MAKEFILE TESTS%f"
