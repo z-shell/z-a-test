@@ -8,10 +8,11 @@ a plugin or snippet. </h3>
 </td></tr>
 <tr><td align="center">
 <img style="width:90%;height:auto" 
-  src="https://user-images.githubusercontent.com/59910950/162139068-7811e223-4992-4b03-b320-b0180050fa32.gif" alt="Preview" />
+  src="https://user-images.githubusercontent.com/59910950/162142910-51fe403f-8ad1-4914-8218-f9940be88d01.gif" alt="Preview" />
 </td></tr></table></div>
 
 ### Install
+
 
 Zunit install if missing:
 
