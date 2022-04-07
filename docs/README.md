@@ -1,7 +1,23 @@
-<h1> ZI Annex Test </h1>
+<div align="center"><table style="width:100%;height:auto">
+<tr><td align="center">
+<a title="ZI" target="_self" href="https://github.com/z-shell/zi/">
+<h2><img align="center" style="width:60px;height:auto" src="https://github.com/z-shell/zi/raw/main/docs/images/logo.svg" alt="ZI Logo" /></a>
+❮ ZI ❯ Annex - Test </h2><h3> 
+<p>An annex that runs tests via make or zunit</p> If any found – after installing and updating
+a plugin or snippet. </h3>
+</td></tr>
+<tr><td align="center">
+<img style="width:90%;height:auto" 
+  src="https://user-images.githubusercontent.com/59910950/162139068-7811e223-4992-4b03-b320-b0180050fa32.gif" alt="Preview" />
+</td></tr></table></div>
 
-A [ZI](https://github.com/z-shell/zi) annex (extension) that runs tests (via `make test`, for example) – if it finds any of them – after installing and updating
-a plugin or snippet. Simply load it like any other plugin to make it active:
+### Install
+
+Zunit install if missing:
+
+```zsh
+zi for @zunit
+```
 
 ```zsh
 zi light z-shell/z-a-test
