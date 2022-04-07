@@ -1,13 +1,6 @@
 <h1> ZI Annex Test </h1>
 
-## Introduction
-
-> **[?]**
-> This repository not compatible with previous versions (zplugin, zinit).
->
-> Please upgrade to [ZI](https://github.com/z-shell-zi)
-
-A [ZI](https://github.com/z-shell/zi) Annex (extension) that runs tests (via `make test`, for example) – if it finds any of them – after installing and updating
+A [ZI](https://github.com/z-shell/zi) annex (extension) that runs tests (via `make test`, for example) – if it finds any of them – after installing and updating
 a plugin or snippet. Simply load it like any other plugin to make it active:
 
 ```zsh
@@ -34,8 +27,12 @@ zi load …
 
 Example activation in the default quiet mode:
 
-![z-a-test activation](https://raw.githubusercontent.com/z-shell/z-a-test/main/images/z-p-test-1.png)
+![z-a-test activation](https://raw.githubusercontent.com/z-shell/z-a-test/main/docs/images/z-p-test-1.png)
 
 Example activation in non-quiet mode:
 
-![z-a-test activation](https://raw.githubusercontent.com/z-shell/z-a-test/main/images/z-p-test-2.png)
+![z-a-test activation](https://raw.githubusercontent.com/z-shell/z-a-test/main/docs/images/z-p-test-2.png)
+
+---
+
+This repository is compatible with [ZI](https://github.com/z-shell-zi)

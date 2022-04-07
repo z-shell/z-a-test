@@ -1,7 +1,7 @@
 *.zwc
 *zcompdump*
-._zinit
-.zinit_lastupd
+._zi
+.zi_lastupd
 zsdoc/data
 
 # Prerequisites
