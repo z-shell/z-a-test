@@ -7,12 +7,10 @@
 a plugin or snippet. </h3>
 </td></tr>
 <tr><td align="center">
-<img style="width:90%;height:auto" 
-  src="https://user-images.githubusercontent.com/59910950/162142910-51fe403f-8ad1-4914-8218-f9940be88d01.gif" alt="Preview" />
+<img style="width:90%;height:auto" src="https://user-images.githubusercontent.com/59910950/162143845-c44ead50-b21a-46c0-8372-18325eb1f33a.gif" alt="Preview" />
 </td></tr></table></div>
 
 ### Install
-
 
 Zunit install if missing:
 
