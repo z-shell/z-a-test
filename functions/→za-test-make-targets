@@ -1,6 +1,8 @@
 # -*- mode: zsh; sh-indentation: 2; indent-tabs-mode: nil; sh-basic-offset: 2; -*-
+# vim: ft=zsh sw=2 ts=2 et
 
-emulate -LR zsh -o extendedglob
+builtin emulate -RL zsh ${=${options[xtrace]:#off}:+-o xtrace}
+builtin setopt extended_glob 
 
 local -a TARGETS match mbegin mend
 
@@ -89,5 +91,3 @@ za-test-make-parseMakefile () {
 za-test-make-parseMakefile < "$1"
 
 reply=( "${(u)TARGETS[@]}" )
-
-# vim: ft=zsh sw=2 ts=2 et

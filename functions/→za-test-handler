@@ -1,6 +1,8 @@
 # -*- mode: zsh; sh-indentation: 2; indent-tabs-mode: nil; sh-basic-offset: 2; -*-
-emulate -RL zsh
-setopt extendedglob warncreateglobal typesetsilent noshortloops
+# vim: ft=zsh sw=2 ts=2 et
+
+builtin emulate -RL zsh ${=${options[xtrace]:#off}:+-o xtrace}
+builtin setopt extended_glob warn_create_global typeset_silent no_short_loops rc_quotes no_auto_pushd
 
 (( ${ICE[test]:-1} )) || return 0
 
@@ -17,16 +19,16 @@ setopt extendedglob warncreateglobal typesetsilent noshortloops
     →za-test-make-targets Makefile
     if (( ${reply[(I)test]} )); then
       [[ "${OPTS[opt_-q,--quiet]}" != 1 ]] && \
-        print -P -- "%F{38}test z-plugin: %F{154}RUNNING MAKEFILE TESTS%f"
+        +zi-message "{annex}test-annex{ehi}: {auto}Running \`MAKEFILE' tests"
         integer quiet=0
         zstyle -T ":zi:annex:test" quiet && quiet=1
       if (( quiet )); then
         if make test &>/dev/null; then
           [[ "${OPTS[opt_-q,--quiet]}" != 1 ]] && \
-            print -P -- "%F{38}test z-plugin: %F{154}The tests succeeded%f"
+            +zi-message "{annex}test-annex{ehi}: {info}The tests succeeded{rst}"
         else
           [[ "${OPTS[opt_-q,--quiet]}" != 1 ]] && \
-            print -P -- "%F{38}test z-plugin: %F{160}The tests have failed%f"
+            +zi-message "{annex}test-annex{ehi}: {error}The tests have failed{rst}"
         fi
       else
         make test
@@ -38,26 +40,24 @@ setopt extendedglob warncreateglobal typesetsilent noshortloops
   if (( ${#farray} )); then
     if type zunit >/dev/null 2>&1; then
       [[ "${OPTS[opt_-q,--quiet]}" != 1 ]] && \
-        print -P -- "%F{38}test z-plugin: %F{154}RUNNING ZUNIT TESTS%f"
+        +zi-message "{annex}test-annex{ehi}: {auto}Running \`ZUnit' tests"
         integer quiet=0
         zstyle -T ":zi:annex:test" quiet && quiet=1
       if (( quiet )); then
         if zunit &>/dev/null; then
           [[ "${OPTS[opt_-q,--quiet]}" != 1 ]] && \
-            print -P -- "%F{38}test z-plugin: %F{154}The tests succeeded%f"
+            +zi-message "{annex}test-annex{ehi}: {info}The tests succeeded{rst}"
         else
           [[ "${OPTS[opt_-q,--quiet]}" != 1 ]] && \
-            print -P -- "%F{38}test z-plugin: %F{160}The tests have failed%f"
+            +zi-message "{annex}test-annex{ehi}: {error}The tests have failed{rst}"
         fi
       else
         zunit
       fi
     else
       [[ "${OPTS[opt_-q,--quiet]}" != 1 ]] && \
-        print -P -- "%F{38}test z-plugin: %F{154}Please install zunit (zi for @zunit) to" \
-        " run the zunit tests provided with the plugin%f"
+        +zi-message "{annex}test-annex{ehi}: {auto}Please install \`ZUnit' (zi for z-shell/z-a-meta-plugins @zunit)" \
+        "to run the zunit tests provided with the plugin"
     fi
   fi
 )
-
-# vim: ft=zsh sw=2 ts=2 et
